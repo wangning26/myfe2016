@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #tab{
+        width: 400px;
+        /*background: #000000;
+        color: #ffffff;*/
+
+
+        text-align: center;
+        border-collapse:collapse;
+        margin: 50px auto;
+        border: 2px solid #898989;
+    }
+    tr{
+        height: 30px;
+    }
+
+    td{
+        border-bottom: 2px solid #898989;
+    }
+    th{
+        border-bottom: 2px solid #898989;
+        height: 30px;
+    }
+
+
+    .parent{
+         background: orange;
+     }
+    .selected{
+          background: #ff0000;
+      }
+
+</style>
+<body>
+<table id="tab">
+    <thead>
+    <tr><th>姓名</th><th>SEX</th><th>住址</th></tr>
+    </thead>
+    <tbody>
+    <tr class="parent" id="r1"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar1"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar1"><td>张三</td><td>男</td><td>USA</td></tr>
+
+    <tr class="parent" id="r2"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar2"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar2"><td>张三</td><td>男</td><td>USA</td></tr>
+
+    <tr class="parent" id="r3"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar3"><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr class="ar3"><td>张三</td><td>男</td><td>USA</td></tr>
+
+    </tbody>
+</table>
+<script src="jquery-1.12.4.js"></script>
+<script>
+ $('.parent').on('click',function(){
+    /* if($(this).hasClass('selected')){
+         $(this).removeClass('selected')
+     }
+     else{$(this).addClass('selected')}
+     $(this).siblings('.a'+this.id).toggle();*/
+     $(this).siblings('.a'+this.id).toggle().end().toggleClass('selected');
+ })
+</script>
+</body>
+</html>

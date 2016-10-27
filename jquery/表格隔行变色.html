@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #tab{
+        border-collapse:collapse;
+        width: 300px;
+        height: 150px;
+        margin: 50px auto;
+        border: 2px solid greenyellow;
+    }
+    th{
+        text-align: center;
+        border: 0;
+        border-bottom: 1px solid;
+    }
+    tr{
+        text-align: center;
+        border-bottom: 1px solid;
+    }
+    td{
+        text-align: center;
+        border-bottom: 1px solid;
+    }
+    .c1{
+        background: orange;
+    }
+    .c2{
+        background: #ff0000;
+    }
+    .c3{
+        color: #ffffff;
+        font-size: 20px;
+        background: #000000;
+    }
+    .c4{
+        background: green;
+    }
+</style>
+<body>
+<table id="tab">
+    <thead>
+    <tr><th></th><th>姓名</th><th>性别</th><th>暂驻地</th></tr>
+
+    </thead>
+    <tbody>
+    <tr><td><input type="radio"  name="2" value="1"/></td><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr><td><input type="radio" name="2" value="1"/></td><td>张三</td><td>女</td><td>USA</td></tr>
+    <tr><td><input type="radio" name="2" value="1"/></td><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr><td><input type="radio" checked="value" name="2" selected="" value="1"/></td><td>QJY</td><td>女</td><td>USA</td></tr>
+    <tr><td><input type="radio" name="2" value="1"/></td><td>张三</td><td>男</td><td>USA</td></tr>
+    <tr><td><input type="radio" name="2" value="1"/></td><td>张三</td><td>女</td><td>USA</td></tr>
+    </tbody>
+</table>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+
+   /*     $("tbody>tr:odd").addClass("c1");
+        $("tbody>tr:even").addClass("c2"); 隔行变色功能
+        $("tr:contains('QJY')").addClass('c3');*/
+        $("tbody>tr").on('click',function(){
+            $(this).addClass('c4').siblings().removeClass('c4').end().find(':radio').prop('checked',true)
+
+        })
+        //单击行加亮并选中本行单选按钮.html
+    })
+</script>
+</body>
+</html>
